@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:hint="Emergency Contact Number"
+    app:boxStrokeColor="@color/pink_main"
+    app:startIconDrawable="@android:drawable/ic_menu_call"
+    app:startIconTint="@color/pink_main">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etEmergencyNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:textColor="@android:color/black" />
+
+</com.google.android.material.textfield.TextInputLayout>

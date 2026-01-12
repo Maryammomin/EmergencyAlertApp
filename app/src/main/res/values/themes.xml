@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.EmergencyAlertApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color (This controls the radio buttons/checkboxes globally) -->
+        <item name="colorPrimary">@color/pink_main</item>
+        <item name="colorPrimaryVariant">@color/pink_main</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item> <!-- Makes battery icons dark -->
+    </style>
+</resources>
