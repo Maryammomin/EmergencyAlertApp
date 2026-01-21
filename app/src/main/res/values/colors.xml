@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Brand Colors -->
+    <color name="pink_main">#D81B60</color> <!-- Darkened pink -->
+    <color name="pink_light">#FF8E8E</color>
+
+    <!-- Emergency Colors -->
+    <color name="emergency_red">#C62828</color> <!-- Darkened red -->
+    <color name="black_text">#000000</color> <!-- Pure black for readability -->
+    <color name="gray_text_dark">#333333</color> <!-- Dark gray for labels -->
+    <!-- Standard UI Colors -->
+    <color name="gray_text">#424242</color> <!-- This is a darker gray for better visibility -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color> <!-- Absolute black -->
+    <color name="text_primary">#1A1A1A</color> <!-- Very dark gray -->
+    <color name="text_secondary">#424242</color> <!-- Dark gray for subtext -->
+    <color name="gray_dark">#424242</color>
+    <color name="divider">#BDBDBD</color>
 </resources>
