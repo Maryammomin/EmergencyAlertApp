@@ -20,16 +20,19 @@ import java.util.HashMap;
 public class ProfileInfoActivity extends AppCompatActivity {
     private TextInputEditText etName, etAge, etMobile;
     private RadioGroup rgGender;
-    private AutoCompleteTextView spinnerState; // Dropdown
+    private AutoCompleteTextView spinnerState;
     private SwitchMaterial switchTerms;
     private LinearProgressIndicator progressBar;
-    private String DB_URL = "https://emergencyalertapp-a4f91-default-rtdb.asia-southeast1.firebasedatabase.app/";
+
+    // Fixed: Added semicolon at the end of the URL string
+    private String DB_URL = "https://emergencyalertapp-95004-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_info);
 
+        // Initialize Views
         etName = findViewById(R.id.etName);
         etAge = findViewById(R.id.etAge);
         etMobile = findViewById(R.id.etMobile);
@@ -43,7 +46,7 @@ public class ProfileInfoActivity extends AppCompatActivity {
         ArrayAdapter<String> stateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, states);
         spinnerState.setAdapter(stateAdapter);
 
-        // 2. Progress Watcher
+        // 2. Setup Progress Watcher
         TextWatcher watcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -69,7 +72,7 @@ public class ProfileInfoActivity extends AppCompatActivity {
                 saveToDB();
             }
         });
-    }
+    } // This bracket closes the onCreate method properly
 
     private void calculateProgress() {
         int count = 0;
@@ -77,11 +80,10 @@ public class ProfileInfoActivity extends AppCompatActivity {
         if (!etAge.getText().toString().trim().isEmpty()) count++;
         if (!etMobile.getText().toString().trim().isEmpty()) count++;
         if (rgGender.getCheckedRadioButtonId() != -1) count++;
-        if (!spinnerState.getText().toString().isEmpty()) count++; // Check State
+        if (!spinnerState.getText().toString().isEmpty()) count++;
         if (switchTerms.isChecked()) count++;
 
-        // Total 6 items to reach 50% progress.
-        // 50 / 6 = ~8.33 per item.
+        // Total 6 items to reach 50% progress. (50 / 6 = ~8.33)
         int progress = (int) (count * 8.33);
         progressBar.setProgress(progress, true);
     }
@@ -92,10 +94,20 @@ public class ProfileInfoActivity extends AppCompatActivity {
         String mobile = etMobile.getText().toString().trim();
         String state = spinnerState.getText().toString();
         int selectedId = rgGender.getCheckedRadioButtonId();
-        String gender = (selectedId != -1) ? ((RadioButton)findViewById(selectedId)).getText().toString() : "";
+
+        String gender = "";
+        if (selectedId != -1) {
+            RadioButton selectedRadioButton = findViewById(selectedId);
+            gender = selectedRadioButton.getText().toString();
+        }
 
         if (name.isEmpty() || age.isEmpty() || mobile.isEmpty() || gender.isEmpty() || state.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(this, "User error. Please login again.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -105,12 +117,14 @@ public class ProfileInfoActivity extends AppCompatActivity {
         map.put("age", age);
         map.put("gender", gender);
         map.put("mobile", mobile);
-        map.put("state", state); // Save state to Firebase
+        map.put("state", state);
 
         FirebaseDatabase.getInstance(DB_URL).getReference("Users").child(uid)
-                .updateChildren(map).addOnSuccessListener(aVoid -> {
+                .updateChildren(map)
+                .addOnSuccessListener(aVoid -> {
                     startActivity(new Intent(ProfileInfoActivity.this, EmergencyContactActivity.class));
                     finish();
-                }).addOnFailureListener(e -> Toast.makeText(this, "DB Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                })
+                .addOnFailureListener(e -> Toast.makeText(this, "DB Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class EmergencyContactActivity extends AppCompatActivity {
     private LinearLayout contactContainer;
-    private String DB_URL = "https://emergencyalertapp-a4f91-default-rtdb.asia-southeast1.firebasedatabase.app/";
+    private String DB_URL = "https://emergencyalertapp-95004-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

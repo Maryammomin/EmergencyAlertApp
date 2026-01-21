@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
     private int tapCount = 0;
     private ArrayList<String> contactNumbers = new ArrayList<>();
     private TextView tvUser;
-    private final String DB_URL = "https://emergencyalertapp-a4f91-default-rtdb.asia-southeast1.firebasedatabase.app/";
+    private final String DB_URL = "https://emergencyalertapp-95004-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

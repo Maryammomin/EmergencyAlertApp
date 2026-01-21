@@ -1,32 +1,13 @@
 {
   "project_info": {
-    "project_number": "443441189088",
-    "project_id": "emergencyalertapp-a4f91",
-    "storage_bucket": "emergencyalertapp-a4f91.firebasestorage.app"
+    "project_number": "303845852200",
+    "project_id": "emergencyalertapp-95004",
+    "storage_bucket": "emergencyalertapp-95004.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:443441189088:android:7054a66dfab88084d1c085",
-        "android_client_info": {
-          "package_name": "com.eaxmple.emergencyalertapp"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCfsT6LBtgRdEEvTtSSGWCBpqjXDveOmbg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:443441189088:android:18d8ea8fb958443dd1c085",
+        "mobilesdk_app_id": "1:303845852200:android:7a2314672b676af753211d",
         "android_client_info": {
           "package_name": "com.example.emergencyalertapp"
         }
@@ -34,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCfsT6LBtgRdEEvTtSSGWCBpqjXDveOmbg"
+          "current_key": "AIzaSyDlmHt3PeGYqiEB5lHuAXxH7KRSmvOhs-4"
         }
       ],
       "services": {

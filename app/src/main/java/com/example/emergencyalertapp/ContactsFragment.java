@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ContactsFragment extends Fragment {
     private ListView listView;
     private ArrayList<String> contactList = new ArrayList<>();
-    private String DB_URL = "https://emergencyalertapp-a4f91-default-rtdb.asia-southeast1.firebasedatabase.app/";
+    private String DB_URL = "https://emergencyalertapp-95004-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
