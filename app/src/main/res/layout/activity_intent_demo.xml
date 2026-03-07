@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intent Demonstration"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Button for Implicit Intent -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnImplicit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Open UNICEF (Implicit Intent)"
+        app:backgroundTint="@color/pink_main"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp"/>
+
+    <!-- Button for Explicit Intent -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExplicit"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Back to Home (Explicit Intent)"
+        android:textColor="@color/black"
+        app:strokeColor="@color/black"
+        app:cornerRadius="12dp"/>
+
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Utility Calculator"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Display Screen -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#F5F5F5">
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="48sp"
+            android:gravity="end|bottom"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:text="0"
+            android:maxLines="1" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Grid of buttons -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:layout_marginTop="16dp">
+
+        <!-- Row 1 -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn7" android:text="7" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn8" android:text="8" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn9" android:text="9" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnDivide" android:text="/" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/pink_main" android:textStyle="bold"/>
+
+        <!-- Row 2 -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn4" android:text="4" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn5" android:text="5" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn6" android:text="6" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnMultiply" android:text="*" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/pink_main" android:textStyle="bold"/>
+
+        <!-- Row 3 -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn1" android:text="1" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn2" android:text="2" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn3" android:text="3" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnMinus" android:text="-" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/pink_main" android:textStyle="bold"/>
+
+        <!-- Row 4 -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn0" android:text="0" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnDot" android:text="." style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/black"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnEqual" android:text="=" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" app:backgroundTint="@color/pink_main" android:textColor="@color/white"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnPlus" android:text="+" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textSize="22sp" android:textColor="@color/pink_main" android:textStyle="bold"/>
+
+        <!-- Row 5 -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnClear" android:text="CLEAR ALL" android:layout_columnSpan="4" android:layout_width="match_parent" android:layout_rowWeight="1" android:textSize="18sp" app:backgroundTint="@color/black" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+    </GridLayout>
+</LinearLayout>

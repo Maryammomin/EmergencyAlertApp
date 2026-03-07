@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home_main"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="SOS Dashboard" />
+        <item
+            android:id="@+id/nav_calculator"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Calculator" />
+        <item
+            android:id="@+id/nav_converter"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="Multi-Converter" />
+        <item
+            android:id="@+id/nav_timer"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="Countdown Timer" />
+        <item
+            android:id="@+id/nav_intent"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="Intent Demo" />
+        <item
+            android:id="@+id/nav_time_picker"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="Time Picker" />
+    </group>
+</menu>

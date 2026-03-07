@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:padding="32dp">
 
-        <!-- Progress Indicator -->
+        <!-- Progress Bar -->
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/setupProgress"
             android:layout_width="match_parent"
@@ -21,7 +21,6 @@
             android:progress="0"
             app:indicatorColor="@color/pink_main"
             app:trackColor="#FCE4EC"
-            app:trackCornerRadius="4dp"
             app:trackThickness="8dp" />
 
         <TextView
@@ -33,7 +32,6 @@
             android:textStyle="bold"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Title in Pink -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,16 +41,15 @@
             android:textStyle="bold"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Name Box -->
+        <!-- Name -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
-            app:hintTextColor="@color/black"
             app:boxStrokeColor="@color/pink_main"
+            app:hintTextColor="@color/black"
             android:layout_marginBottom="16dp">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
@@ -61,25 +58,27 @@
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Age Box -->
+        <!-- Date of Birth -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Age"
-            app:hintTextColor="@color/black"
+            android:hint="Date of Birth"
+            app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+            app:startIconTint="@color/pink_main"
             app:boxStrokeColor="@color/pink_main"
+            app:hintTextColor="@color/black"
             android:layout_marginBottom="16dp">
-
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etAge"
+                android:id="@+id/etDOB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:inputType="number" />
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Gender Selection -->
+        <!-- Gender Selection - FIXED TEXT COLOR -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,7 +94,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="16dp">
-
             <RadioButton
                 android:id="@+id/rbMale"
                 android:layout_width="wrap_content"
@@ -103,7 +101,6 @@
                 android:text="Male"
                 android:textColor="@color/black"
                 android:buttonTint="@color/pink_main"/>
-
             <RadioButton
                 android:id="@+id/rbFemale"
                 android:layout_width="wrap_content"
@@ -112,7 +109,6 @@
                 android:text="Female"
                 android:textColor="@color/black"
                 android:buttonTint="@color/pink_main"/>
-
             <RadioButton
                 android:id="@+id/rbOther"
                 android:layout_width="wrap_content"
@@ -123,7 +119,7 @@
                 android:buttonTint="@color/pink_main"/>
         </RadioGroup>
 
-        <!-- State Dropdown -->
+        <!-- State -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
@@ -132,7 +128,6 @@
             app:boxStrokeColor="@color/pink_main"
             app:hintTextColor="@color/black"
             android:layout_marginBottom="16dp">
-
             <AutoCompleteTextView
                 android:id="@+id/spinnerState"
                 android:layout_width="match_parent"
@@ -141,16 +136,15 @@
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Mobile No Box -->
+        <!-- Mobile -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mobile No"
-            app:hintTextColor="@color/black"
             app:boxStrokeColor="@color/pink_main"
+            app:hintTextColor="@color/black"
             android:layout_marginBottom="24dp">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etMobile"
                 android:layout_width="match_parent"
@@ -159,15 +153,14 @@
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Terms Toggle -->
+        <!-- Terms Switch -->
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/switchTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
             android:text="I accept the Terms and Conditions"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:layout_marginBottom="32dp"
             app:thumbTint="@color/pink_main"
             app:trackTint="@color/pink_main" />
 

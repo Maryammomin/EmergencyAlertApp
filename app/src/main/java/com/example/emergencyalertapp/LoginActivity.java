@@ -16,7 +16,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         mAuth = FirebaseAuth.getInstance();
         etEmail = findViewById(R.id.etLoginEmail);
         etPass = findViewById(R.id.etLoginPass);
@@ -24,22 +23,22 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.btnLogin).setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
             String pass = etPass.getText().toString().trim();
-
             if (email.isEmpty() || pass.isEmpty()) return;
 
             mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(this, "Welcome Back!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    startActivity(new Intent(this, MainActivity.class));
                     finish();
-                } else {
-                    if (task.getException() instanceof FirebaseAuthInvalidUserException) {
-                        Toast.makeText(this, "Account doesn't exist. Please Sign Up.", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(this, "Login failed. Check credentials.", Toast.LENGTH_SHORT).show();
-                    }
+                } else if (task.getException() instanceof FirebaseAuthInvalidUserException) {
+                    Toast.makeText(this, "No account found. Please Sign Up.", Toast.LENGTH_SHORT).show();
                 }
             });
+        });
+
+        // Link to Signup Page
+        findViewById(R.id.tvSignUpLink).setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            finish();
         });
     }
 }
